@@ -59,17 +59,23 @@ This project demonstrates **CRUD operations**, **Add to Cart**, **Role-Based Acc
 > Replace below image URLs with your own when hosted
 
 - 🏠 Home Page  
-  `![Home Page](screenshots/home.png)`
+  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/HomePage%201.png`
+  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/HomePage%202.png`
 
 - 🔐 Login Page  
-  `![Login Page](screenshots/login.png)`
+  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Login%20Page.png`
 
 - 🛒 Cart Page  
-  `![Cart](screenshots/cart.png)`
+  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Cart%20Page.png`
 
 - 📋 Add Book Form  
-  `![Add Book](screenshots/addbook.png)`
+  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Add%20New%20Book%20Page.png`
+  
+- 📤 Update Book Form
+   `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Update%20BookPage.png`
 
+- 🗑️ Delete Book
+    `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Delete%20A%20Book%20Page.png`
 ---
 
 ## ⚙️ Setup Instructions
