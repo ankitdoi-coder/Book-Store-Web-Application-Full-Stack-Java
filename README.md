@@ -1,4 +1,4 @@
-# 📚 Online Bookstore Management System (Spring Boot + Thymeleaf)
+  # 📚 Online Bookstore Management System (Spring Boot + Thymeleaf)
 
 A full-featured **Bookstore Web Application** built using `Spring Boot`, `Thymeleaf`, and `Bootstrap`.  
 This project demonstrates **CRUD operations**, **Add to Cart**, **Role-Based Access Control**, and **Session management**, making it perfect for real-world internship/project showcase.
@@ -59,23 +59,23 @@ This project demonstrates **CRUD operations**, **Add to Cart**, **Role-Based Acc
 > Replace below image URLs with your own when hosted
 
 - 🏠 Home Page  
-  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/HomePage%201.png`
-  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/HomePage%202.png`
+   https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/HomePage%201.png
+   https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/HomePage%202.png
 
 - 🔐 Login Page  
-  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Login%20Page.png`
+   https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Login%20Page.png
 
 - 🛒 Cart Page  
-  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Cart%20Page.png`
+   https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Cart%20Page.png
 
 - 📋 Add Book Form  
-  `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Add%20New%20Book%20Page.png`
+   https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Add%20New%20Book%20Page.png
   
 - 📤 Update Book Form
-   `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Update%20BookPage.png`
+    https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Update%20BookPage.png
 
 - 🗑️ Delete Book
-    `https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Delete%20A%20Book%20Page.png`
+     https://github.com/ankitdoi-coder/Book-Store-Web-Application-/blob/main/Deployment%20ScreenShot/Delete%20A%20Book%20Page.png
 ---
 
 ## ⚙️ Setup Instructions
