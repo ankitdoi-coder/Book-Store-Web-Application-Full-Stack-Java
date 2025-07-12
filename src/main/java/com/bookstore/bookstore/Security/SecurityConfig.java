@@ -9,27 +9,28 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
+    @Autowired
+    CustomSuccessHandler handler;
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/cart", "/add-to-cart/**").hasAnyRole("USER", "ADMIN")
-                .requestMatchers("/add", "/delete", "/update").hasRole("ADMIN")
+                .requestMatchers("/", "/cart", "/add-to-cart/**").hasAnyRole("USER","ADMIN")
+                .requestMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login").permitAll()
-                        .defaultSuccessUrl("/", true))
+                        .successHandler(handler))
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login?logout").permitAll())
-                .exceptionHandling(exception -> exception.accessDeniedPage("/") // ✅ Redirect to homepage instead of
+                .exceptionHandling(exception -> exception.accessDeniedPage("/")) // ✅ Redirect to homepage instead of
                                                                                 // white label
-                )
                 .csrf(csrf -> csrf.disable()); // only during testing
 
         return http.build();

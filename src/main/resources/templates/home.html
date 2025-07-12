@@ -1,5 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<style>
+    .admin-title {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00b894, #0984e3);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+</style>
 
 <head>
     <title>Online Bookstore</title>
@@ -8,7 +25,9 @@
 
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4" style="align-items: center; background-color: aqua; border: 2px solid black; border-radius: 12px;">📚 Welcome to Our Bookstore ( Ankit Book Depo) 📚</h1>
+        <h1 class="mb-4"
+            style="align-items: center; background-color: aqua; border: 2px solid black; border-radius: 12px;">📚
+            Welcome to Our Bookstore ( Ankit Book Depo) 📚</h1>
 
         <p th:text="'Total books found: ' + ${#lists.size(books)}" class="text-muted"></p>
 
@@ -29,17 +48,22 @@
                         <a th:href="@{'/add-to-cart/' + ${book.id}}" class="btn btn-success">🛒 Add to Cart</a>
 
                     </div>
-                    
+
                 </div>
             </div>
-        </div>
-        <a href="/cart" class="btn btn-outline-success mb-3">🛒 View Cart</a>
+            <!-- Visible only to ADMIN -->
+           
 
-        <a href="/add" class="btn btn-outline-primary mb-3">➕ Add New Book</a>
-        <a href="/delete" class="btn btn-outline-primary mb-3">🗑️ Delete A Book</a>
-        <a href="/update" class="btn btn-outline-primary mb-3">🔄 Update A Book</a>
-    </div>
-    </div>
+            <!-- Visible to both USER & ADMIN -->
+            <div sec:authorize="hasAnyRole('USER', 'ADMIN')">
+                <a href="/cart" class="btn btn-outline-success mb-3">🛒 View Cart</a>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                Welcome, <span sec:authentication="name"></span>!
+                <a th:href="@{/logout}" class="btn btn-danger btn-sm ms-2">Logout</a>
+            </div>
+
+        </div>
 
 
 </body>
