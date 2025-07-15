@@ -33,6 +33,7 @@
 
         <div class="row">
             <div th:each="book : ${books}" class="col-md-4 mb-4">
+                
                 <div class="card h-100 shadow-sm">
                     <img th:src="${book.imageUrl} ?: '/images/default.jpg'" class="card-img-top img-fluid"
                         alt="Book Image" style="height: 200px; object-fit: cover;" />
@@ -51,8 +52,7 @@
 
                 </div>
             </div>
-            <!-- Visible only to ADMIN -->
-           
+            
 
             <!-- Visible to both USER & ADMIN -->
             <div sec:authorize="hasAnyRole('USER', 'ADMIN')">

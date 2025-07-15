@@ -26,7 +26,12 @@
     <h1 class="admin-title">Admin Panel</h1>
      <h2>✏️ Update Book Details</h2>
     <form th:action="@{/update}" th:object="${book}" method="post">
+
         <input type="hidden" th:field="*{id}" />
+        <div class="mb-3">
+            <label>ID</label>
+            <input type="number" class="form-control" th:field="*{id}" required>
+        </div>
 
         <div class="mb-3">
             <label>Title</label>

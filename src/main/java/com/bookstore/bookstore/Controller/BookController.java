@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.bookstore.bookstore.Model.Book;
 import com.bookstore.bookstore.service.BookService;
 
@@ -63,22 +61,32 @@ public class BookController {
     // }
 
     @PostMapping("/delete")
-    public String deleteBookByTitle(@RequestParam String title) {
-        bookService.deleteBookByTitle(title);
+    public String deleteBookById(Book book) {
+        bookService.deleteBookById(book);
         return "redirect:/";
     }
 
     // For Updatting the Book attributes(Price,stocks,etc.)
-    @GetMapping("/update")
-    public String updateBookForm(Model model) {
-        model.addAttribute("book", new Book());
+    @GetMapping("/update/{id}")
+    public String updateBookForm(@PathVariable Long id, Model model) {
+        Optional<Book> existingBook = bookService.findById(id);
+        if (existingBook.isEmpty()) {
+            return "redirect:/select-book"; // book not found
+        }
+        model.addAttribute("book", existingBook.get());
         return "updatebook";
     }
 
     @PostMapping("/update")
-    public String updateBookByTitle(@ModelAttribute Book book) {
-        bookService.updateBookByTitle(book);
-        return "redirect:/";
+    public String updateBookById(Book book) {
+        bookService.updateBookById(book);
+        return "redirect:/admin";
+    }
+
+    @GetMapping("/select-book")
+    public String selectBookPage(Model model) {
+        model.addAttribute("books", bookService.getAllBooks());
+        return "selectbook";
     }
 
     @GetMapping("/add-to-cart/{id}")
@@ -90,7 +98,7 @@ public class BookController {
         }
 
         // Get book from DB
-        Optional<Book> optionalBook = bookService.getBookById(id);
+        Optional<Book> optionalBook = bookService.findById(id);
         if (optionalBook.isPresent()) {
             cart.add(optionalBook.get());
             session.setAttribute("cart", cart);
@@ -117,6 +125,17 @@ public class BookController {
         model.addAttribute("cart", cart);
         model.addAttribute("total", total); // send to template
         return "cart";
+    }
+
+    @GetMapping("/booklist")
+    public String getListBook(Model model) {
+        List<Book> books = bookService.getAllBooks();
+        System.out.println("📚 Total books fetched: " + books.size());
+        for (Book b : books) {
+            System.out.println("📷 Book: " + b.getTitle() + ", Image: " + b.getImageUrl());
+        }
+        model.addAttribute("books", books);
+        return "booklist";
     }
 
 }

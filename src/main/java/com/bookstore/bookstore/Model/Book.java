@@ -28,4 +28,5 @@ public class Book {
     private String imageUrl;
 
     private int stock;
+
 }

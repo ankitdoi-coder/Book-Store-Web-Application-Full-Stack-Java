@@ -24,25 +24,16 @@ public class BookServiceImpl implements BookService {
         bookRepository.save(book);
     }
 
-    // @Override
-    // public void deleteBookById(Long id){
-    // bookRepository.deleteById(id);
-    // }
+    
 
     @Override
-    public void deleteBookByTitle(String title) {
-        Optional<Book> bookOptional = bookRepository.findByTitle(title);
-        if (bookOptional.isPresent()) {
-            bookRepository.delete(bookOptional.get());
-        } else {
-            System.out.println("❌ Book not found with title: " + title);
-            // throw exception or show error message if needed
-        }
+    public void deleteBookById(Book book) {
+        bookRepository.delete(book);
     }
 
     @Override
-    public void updateBookByTitle(Book book) {
-        Book existingBook = bookRepository.findByTitle(book.getTitle())
+    public void updateBookById(Book book) {
+        Book existingBook = bookRepository.findById(book.getId())
                 .orElseThrow(() -> new RuntimeException("Book not found"));
 
         // Update fields only if user provided
@@ -62,9 +53,12 @@ public class BookServiceImpl implements BookService {
         bookRepository.save(existingBook);
     }
 
+   
+
     @Override
-    public Optional<Book> getBookById(Long id) {
-        return bookRepository.findById(id);
+    public Optional<Book> findById(Long id) {
+       Optional<Book> book= bookRepository.findById(id);
+       return book;
     }
 
 }

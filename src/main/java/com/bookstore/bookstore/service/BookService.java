@@ -10,11 +10,11 @@ public interface BookService {
 
     void saveBook(Book book); // ✅ TO Add New Book
 
-    // void deleteBookById(Long id); // ✅ To Delete a Book by Id
+    void deleteBookById(Book book); // ✅ To Delete a Book by Id
 
-    void deleteBookByTitle(String title);  //to delete By title
+    void updateBookById(Book book); // ✅To update
 
-    void updateBookByTitle(Book book);
-    Optional<Book> getBookById(Long id);
+    Optional<Book> findById(Long id);  // ✅ TO get THe list of  book by Id
 
+    
 }
