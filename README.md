@@ -111,11 +111,11 @@ Use the following command to run the project:
 
 ## Future Improvements
 
-- Store cart items in the database  
+- New Login UI  
 - User registration and profile management  
 - Pagination and sorting on the homepage  
 - RESTful APIs with Postman Collection  
-- Payment Gateway Integration
+- Payment Gateway Integration Soon...
 
 ## License
 
