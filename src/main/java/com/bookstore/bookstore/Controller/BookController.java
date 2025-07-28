@@ -49,21 +49,18 @@ public class BookController {
     // TO delete A Book
     @GetMapping("/delete")
     public String deleteBookForm(Model model) {
+        model.addAttribute("books", bookService.getAllBooks()); // 🔥 Adding this
         model.addAttribute("book", new Book());
-        return "deletebook"; // it also shows form to delete a book
+        return "deletebook";
     }
 
-    // For Now we are just comenting it beacause i want to
-    // @PostMapping("/delete") // delete book by title insted id
-    // public String deleteBookById(@RequestParam Long id) {
-    // bookService.deleteBookById(id); // new method below
-    // return "redirect:/";
-    // }
-
-    @PostMapping("/delete")
-    public String deleteBookById(Book book) {
-        bookService.deleteBookById(book);
-        return "redirect:/";
+    @PostMapping("/delete/{id}")
+    public String deleteBook(@PathVariable Long id) {
+        Optional<Book> book = bookService.findById(id);
+        if (book.isPresent()) {
+            bookService.deleteBookById(book.get()); // pass Book object
+        }
+        return "redirect:/admin"; // 
     }
 
     // For Updatting the Book attributes(Price,stocks,etc.)
