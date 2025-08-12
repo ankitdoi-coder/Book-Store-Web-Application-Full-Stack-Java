@@ -77,7 +77,7 @@ This project demonstrates **CRUD operations**, **Add to Cart**, **Role-Based Acc
   ![Delete Book Page](https://github.com/ankitdoi-coder/Book-Store-Web-Application-Full-Stack-Java/blob/main/Deployment%20ScreenShot/Delete_A_Book_Page.png)
 
 - New Login Page
-- ![New Login Page]
+- ![New Login Page](https://github.com/ankitdoi-coder/Book-Store-Web-Application-Full-Stack-Java/blob/main/Deployment%20ScreenShot/Updated_Login_page.jpg)
 ---
 
 ## ⚙️ Setup Instructions
