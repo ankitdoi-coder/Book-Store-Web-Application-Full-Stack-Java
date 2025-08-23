@@ -98,6 +98,8 @@ Use the following command to run the project:
 ./mvnw spring-boot:run
 ```
 
+## Video Preview
+- https://youtu.be/Eax4XVx56_0?si=Wi48ZAcV3REIxUxs
 ## Folder Structure
 
 ```
